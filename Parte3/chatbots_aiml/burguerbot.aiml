@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+<!--<set name="pan">NO DEFINIDO</set>-->
+    
+<category>
+    <pattern>*</pattern>
+    <template>Entones es usted <set name="topic"><star /></set>.
+    Y qué pan le gusta más? Hamburguesa, chapata o brioche?</template>
+</category>
+
+<topic name="vegano">
+    
+    <category>
+        <pattern>PAN_BURGUER</pattern>
+        <template>
+            <think>
+                <set name="pan">HAMBURGUESA</set>
+            </think>
+            ¿Y prefiere usted el tofu o el falafel?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>PAN_CHAPATA</pattern>
+        <template>
+            <think>
+                <set name="pan">CHAPATA</set>
+            </think>
+            ¿Y prefiere usted el tofu o el falafel?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>PAN_BRIOCHE</pattern>
+        <template>
+            <think>
+                <set name="pan">BRIOCHE</set>
+            </think>
+            ¿Y prefiere usted el tofu o el falafel?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TOFU</pattern>
+        <template>
+            <condition name="pan">
+                <li value="HAMBURGUESA">Te prepararemos la hamburguesa vegana de tofu con pan de hamburguesa.</li>
+                <li value="CHAPATA">Te prepararemos la hamburguesa vegana de tofu con pan de chapata.</li>
+                <li value="BRIOCHE">Te prepararemos la hamburguesa vegana de tofu con pan brioche.</li>
+                <li value="NO DEFINIDO">por favor introduzca el tipo de pan...</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>FALAFEL</pattern>
+        <template>
+            <condition name="pan">
+                <li value="HAMBURGUESA">Te prepararemos la hamburguesa vegana de falafel con pan de hamburguesa.</li>
+                <li value="CHAPATA">Te prepararemos la hamburguesa vegana de falafel con pan de chapata.</li>
+                <li value="BRIOCHE">Te prepararemos la hamburguesa vegana de falafel con pan brioche.</li>
+                <li value="NO DEFINIDO">por favor introduzca el tipo de pan...</li>
+            </condition>
+        </template>
+    </category>
+    
+</topic>
+
+<topic name="carnivoro">
+    
+    <category>
+        <pattern>PAN_HAMBURGUESA</pattern>
+        <template>
+            <think>
+                <set name="pan">HAMBURGUESA</set>
+            </think>
+            ¿Y prefiere usted la ternera o el pollo?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>PAN_CHAPATA</pattern>
+        <template>
+            <think>
+                <set name="pan">CHAPATA</set>
+            </think>
+            ¿Y prefiere usted la ternera o el pollo?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>PAN_BRIOCHE</pattern>
+        <template>
+            <think>
+                <set name="pan">BRIOCHE</set>
+            </think>
+            ¿Y prefiere usted la ternera o el pollo?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TERNERA</pattern>
+        <template>
+            <condition name="pan">
+                <li value="HAMBURGUESA">Te prepararemos la hamburguesa carnívora de ternera con pan de hamburguesa.</li>
+                <li value="CHAPATA">Te prepararemos la hamburguesa carnívora de ternera con pan de chapata.</li>
+                <li value="BRIOCHE">Te prepararemos la hamburguesa carnívora de ternera con pan brioche.</li>
+                <li value="NO DEFINIDO">por favor introduzca el tipo de pan...</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>POLLO</pattern>
+        <template>
+            <condition name="pan">
+                <li value="HAMBURGUESA">Te prepararemos la hamburguesa carnívora de pollo con pan de hamburguesa.</li>
+                <li value="CHAPATA">Te prepararemos la hamburguesa carnívora de pollo con pan de chapata.</li>
+                <li value="BRIOCHE">Te prepararemos la hamburguesa carnívora de pollo con pan brioche.</li>
+                <li value="NO DEFINIDO">por favor introduzca el tipo de pan...</li>
+            </condition>
+        </template>
+    </category>
+    
+</topic>
+
+</aiml>
